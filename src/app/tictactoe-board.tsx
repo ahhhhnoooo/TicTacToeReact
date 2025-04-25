@@ -11,21 +11,13 @@ export function TicTacToeBoard() {
         turn: 'x'
     })
 
-    function reset() {
-        setGame({
-            board: Array(9).fill(''),
-            winner: '',
-            turn: 'x'
-        })
-    }
-
     function onClickSpace(spaceIndex: number): void {
         const result = TicTacToeGame.onClick(game, spaceIndex);
         setGame(result);
     }
 
     //Generate the board display elements
-    let boardElement = [];
+    const boardElement = [];
     for (let spaceIndex = 0; spaceIndex < game.board.length; ++spaceIndex) {
         const spaceValue = game.board[spaceIndex];
 
